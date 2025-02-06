@@ -1,0 +1,477 @@
+/* 共通のCSS */
+html {
+  scroll-behavior: smooth; /* ページ内リンクを押した時、スムーズに画面をスクロールする */
+}
+body {
+  color: var(--grayColor);
+}
+img,
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --drawerColor: #006871b5;
+  --barColor: #eaf4fc;
+  --menuColor: linear-gradient(
+    109.6deg,
+    rgba(204, 228, 247, 1) 11.2%,
+    rgba(237, 246, 250, 1) 100.2%
+  );
+  --fontColor: #f3f3f3;
+  --blueColor: #006871b5;
+  --backgroundblue: #00687188;
+  --whiteColor: #ffffff;
+  --grayColor: #3c3c3c;
+  --gray: #7d7d7d;
+}
+
+/* TOPに戻るボタン */
+.topbtn {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0; /* サイトが読み込まれた瞬間、一瞬画面にボタンが出てきてしまう現象を防ぐため */
+  z-index: 10000;
+  transition: all 0.5s linear;
+}
+.topbtn a {
+  display: block;
+  padding: 30px 0;
+  text-align: center;
+  background-color: var(--blueColor);
+  color: white;
+  border-radius: 50%;
+}
+
+/* header */
+.drawerButton {
+  display: none;
+}
+
+#drawerMenu ul {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+  align-items: center;
+}
+#drawerMenu ul li {
+  width: fit-content;
+  text-align: center;
+}
+#drawerMenu ul li a {
+  display: block;
+  padding: 1rem;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+/* アンカーリンクにマウスが乗ると、他のアンカーリンクが少し薄くなる指定 */
+#drawerMenu ul:has(a:hover) a:not(:hover) {
+  opacity: 0.3;
+}
+
+/* top */
+main #topSec {
+  width: 100vw;
+  max-height: 700px;
+  background-image: url(../images/kariImg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 15px 0px 25px rgba(0, 0, 0, 0.5),
+    inset -15px -25px 25px rgba(0, 0, 0, 0.5);
+}
+
+main #topSec h1 {
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+  padding-top: 23vh;
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--grayColor);
+  letter-spacing: 7px;
+}
+
+/* blog */
+#blogSec {
+  max-width: 650px;
+  height: 200px;
+  margin-inline: auto;
+  margin-block: 100px;
+  background-color: var(--blueColor);
+  color: var(--fontColor);
+  border: 4px solid var(--grayColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  letter-spacing: 1.2px;
+}
+
+#blogSec .blogBox {
+  display: flex;
+  gap: 3rem;
+  border-bottom: 1px solid var(--fontColor);
+}
+
+/* works */
+#worksSec h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  background-color: #0068713b;
+  padding-block: 3rem;
+  color: var(--grayColor);
+  letter-spacing: 1.2px;
+}
+
+#worksSec .worksWidth {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+#worksSec .worksWidth .conceptText {
+  position: relative;
+  margin-top: 8.5rem;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  line-height: 1.3em;
+  color: var(--grayColor);
+}
+
+#worksSec .worksWidth .conceptText::before {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  color: #0068713b;
+  font-size: 90px;
+  font-weight: bold;
+  content: 'Concept';
+  z-index: -1;
+}
+
+#worksSec .worksWidth .conceptText .textarea {
+  margin-left: 4em;
+}
+
+#worksSec .worksWidth .worksImgAndLength {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 4rem;
+}
+
+/* works縦書きテキスト */
+#worksSec .worksWidth .lengthTitle {
+  margin-top: -1rem;
+  writing-mode: vertical-rl;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0.6rem;
+  height: fit-content;
+  padding: 12px 12px;
+  color: var(--blueColor);
+  border: solid 2px var(--backgroundblue);
+}
+
+#worksSec .worksWidth .worksImgAndLength .works1Img {
+  margin-top: 20px;
+  max-width: 600px;
+  max-height: 350px;
+}
+
+/* 説明のテキスト */
+#worksSec .worksWidth .explanWorks1 {
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: 5rem;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 2.8rem;
+}
+
+#worksSec .worksWidth .explanWorks1 .mypartFlex {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#worksSec .worksWidth .explanWorks1 .mypartFlex h3 {
+  height: fit-content;
+  color: var(--blueColor);
+  font-size: 24px;
+  letter-spacing: -1px;
+  padding: 0.5em 0.2em;
+  writing-mode: vertical-rl;
+  border: solid 2px var(--backgroundblue);
+}
+
+#worksSec .worksWidth .explanWorks1 .mypartFlex .mypartImg {
+  margin-inline-start: 7rem;
+  margin-top: 4rem;
+  width: 500px;
+  height: 300px;
+}
+
+#worksSec .worksWidth .explanWorks1 .mypartFlex p {
+  margin-inline-start: -13rem;
+  padding-inline: 0.5rem;
+  align-self: flex-end;
+  margin-block-end: 1.2rem;
+  background-color: var(--fontColor);
+  border-radius: 10px;
+}
+
+#worksSec .worksWidth .explanWorks1 .townNewsFlex {
+  margin-top: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+#worksSec .worksWidth .explanWorks1 .townNewsFlex p {
+  padding-inline: 2rem;
+  align-self: flex-end;
+  margin-block-end: 2rem;
+  background-color: var(--fontColor);
+  border-radius: 10px;
+}
+#worksSec .worksWidth .explanWorks1 .townNewsFlex .mypartImg {
+  margin-inline-start: 2rem;
+  margin-top: 3rem;
+  width: 500px;
+  height: 300px;
+}
+
+/* abouto me */
+#aboutSec {
+  margin-top: 10rem;
+  padding-top: 6rem;
+  text-align: center;
+  background: linear-gradient(#0068713b, #00687188);
+}
+#aboutSec h2 {
+  font-size: 64px;
+  font-weight: bold;
+  color: var(--grayColor);
+}
+#aboutSec p {
+  margin-top: 3rem;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  line-height: 2.6rem;
+}
+#aboutSec .myphotoImg {
+  margin-top: 5rem;
+  width: 250px;
+  height: 270px;
+  margin-inline: auto;
+}
+
+/* 以下skills */
+#aboutSec .aboutSkills {
+  margin-top: 5rem;
+  max-width: 800px;
+  margin-inline: auto;
+  background-color: var(--whiteColor);
+  padding-block: 55px 55px;
+}
+
+/* SkillsとHobbyのタイトル */
+#aboutSec h3 {
+  display: flex;
+  flex-direction: column;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+}
+#aboutSec h3 .smallTitle {
+  font-size: 16px;
+}
+
+/* skillsの説明部分 */
+#aboutSec .aboutSkills .explanSkills {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* SkillsとHobbyの内容テキスト一括調整 */
+#aboutSec .skilleHobbyText {
+  margin-top: 0.9rem;
+  font-size: 16px;
+  line-height: 1.4rem;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+#aboutSec .aboutSkills .skillsIcon,
+#aboutSec .aboutSkills .studySkillsIcon {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+#aboutSec .aboutSkills .skillsIcon {
+  margin-top: 50px;
+}
+
+#aboutSec .aboutSkills img {
+  width: 65px;
+  height: 65px;
+}
+
+/* 勉強中と勉強予定 */
+#aboutSec .aboutSkills h4 {
+  margin-top: 65px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#aboutSec .aboutSkills .studySkillsIcon {
+  margin-top: 20px;
+}
+
+/* Hobby */
+#aboutSec .aboutHobby {
+  margin-top: 128px;
+  max-width: 800px;
+  margin-inline: auto;
+  padding-block: 5rem 5rem;
+  background-color: var(--whiteColor);
+}
+
+#aboutSec .aboutHobby p {
+  margin-top: 50px;
+}
+
+#aboutSec .aboutHobby .hobbyImg {
+  margin-top: 55px;
+  width: 370px;
+  height: 235px;
+  margin-inline: auto;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  background-color: var(--backgroundblue);
+  color: var(--whiteColor);
+}
+
+/* ーーーーーーーー以下メディアクエリーーーーーーー */
+@media (width <=800px) {
+  .drawerButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: var(--drawerColor);
+    border-radius: 5px;
+    z-index: 10000;
+  }
+  .drawerButton span {
+    width: 60%;
+    height: 4px;
+    display: block;
+    position: absolute;
+    left: 20%;
+    background-color: var(--barColor);
+    border-radius: 5px;
+    transition: all 0.2s linear;
+  }
+
+  .drawerButton span:nth-of-type(1) {
+    top: 10px;
+    transform: rotate(0);
+  }
+
+  .drawerButton span:nth-of-type(2) {
+    top: 18px;
+    transform: scale(1);
+  }
+
+  .drawerButton span:nth-of-type(3) {
+    bottom: 10px;
+    transform: rotate(0);
+  }
+
+  .drawerButton::after {
+    content: 'MENU';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1rem;
+    font-size: 0.725rem;
+    font-weight: bold;
+    color: var(--drawerColor);
+  }
+
+  .close span:nth-of-type(1) {
+    top: 18px;
+    transform: rotate(-45deg);
+  }
+
+  .close span:nth-of-type(2) {
+    transform: scale(0);
+  }
+
+  .close span:nth-of-type(3) {
+    bottom: 18px;
+    transform: rotate(45deg);
+  }
+
+  #drawerMenu {
+    position: fixed;
+    top: 0;
+    right: -240px;
+    transition: all 0.3s linear;
+    z-index: 1000;
+  }
+  #drawerMenu ul {
+    display: block;
+    width: 200px;
+    height: 100%;
+    padding: 80px 20px 20px 20px;
+    background-image: var(--menuColor);
+    overflow: hidden;
+    text-align: center;
+    list-style-type: none;
+    border-radius: 0 0 0 10px;
+  }
+  #drawerMenu ul li {
+    width: 100%;
+  }
+
+  #drawerMenu.open {
+    right: 0;
+  }
+}
+
+/* 今後の予定(2025.02.05メモ) */
+/*【CSS】色の統一・CSSの整理
+　【JS】ふわっと浮き出る動きを追加,趣味画像の拡大(モーダル),カーソル合わせると動く */
