@@ -174,6 +174,7 @@ main #topSec h1 {
   margin-left: 4em;
 }
 
+/* 縦書きテキストと写真のフレックス */
 #worksSec .worksWidth .worksImgAndLength {
   margin-top: 100px;
   display: flex;
@@ -183,7 +184,7 @@ main #topSec h1 {
   gap: 4rem;
 }
 
-/* works縦書きテキスト */
+/* works縦書きテキスト(まちづくり協議会) */
 #worksSec .worksWidth .lengthTitle {
   margin-top: -1rem;
   writing-mode: vertical-rl;
@@ -219,6 +220,7 @@ main #topSec h1 {
   flex-wrap: wrap;
 }
 
+/* 担当コーディングの縦書きテキスト */
 #worksSec .worksWidth .explanWorks1 .mypartFlex h3 {
   height: fit-content;
   color: var(--blueColor);
@@ -232,17 +234,22 @@ main #topSec h1 {
 #worksSec .worksWidth .explanWorks1 .mypartFlex .mypartImg {
   margin-inline-start: 7rem;
   margin-top: 4rem;
-  width: 500px;
+  max-width: 500px;
   height: 300px;
+  /* box-shadow: 0px 3px 7px; */
 }
 
-#worksSec .worksWidth .explanWorks1 .mypartFlex p {
-  margin-inline-start: -13rem;
+#worksSec .worksWidth .explanWorks1 .mypartFlex .maypartImgAndText > p {
+  position: relative;
+  top: -4rem;
+  right: -30rem;
+  width: fit-content;
   padding-inline: 0.5rem;
-  align-self: flex-end;
-  margin-block-end: 1.2rem;
+  /* align-self: flex-end; */
+  /* margin-block-end: 1.2rem; */
   background-color: var(--fontColor);
   border-radius: 10px;
+  /* box-shadow: 2px 2px 2px; */
 }
 
 #worksSec .worksWidth .explanWorks1 .townNewsFlex {
@@ -251,7 +258,7 @@ main #topSec h1 {
   flex-wrap: wrap;
   flex-direction: row-reverse;
 }
-#worksSec .worksWidth .explanWorks1 .townNewsFlex p {
+#worksSec .worksWidth .explanWorks1 .townNewsFlex > p {
   padding-inline: 2rem;
   align-self: flex-end;
   margin-block-end: 2rem;
@@ -261,7 +268,7 @@ main #topSec h1 {
 #worksSec .worksWidth .explanWorks1 .townNewsFlex .mypartImg {
   margin-inline-start: 2rem;
   margin-top: 3rem;
-  width: 500px;
+  max-width: 500px;
   height: 300px;
 }
 
@@ -369,7 +376,7 @@ main #topSec h1 {
 
 #aboutSec .aboutHobby .hobbyImg {
   margin-top: 55px;
-  width: 370px;
+  max-width: 370px;
   height: 235px;
   margin-inline: auto;
 }
@@ -382,7 +389,8 @@ footer {
 }
 
 /* ーーーーーーーー以下メディアクエリーーーーーーー */
-@media (width <=800px) {
+/* media <=800px */
+@media (max-width: 800px) {
   .drawerButton {
     position: fixed;
     top: 10px;
@@ -469,6 +477,90 @@ footer {
 
   #drawerMenu.open {
     right: 0;
+  }
+
+  /* 以下内容 */
+  /* works */
+  #worksSec .worksWidth .worksImgAndLength {
+    gap: 2rem;
+  }
+
+  #worksSec .worksWidth .explanWorks1 {
+    inline-size: 600px;
+    margin-inline: auto;
+  }
+
+  #worksSec .worksWidth .explanWorks1 .mypartFlex {
+    display: block;
+    text-align: center;
+  }
+  #worksSec .worksWidth .explanWorks1 .mypartFlex h3 {
+    writing-mode: horizontal-tb;
+    width: fit-content;
+    margin-inline: auto;
+    padding: 0.5rem 3rem;
+  }
+
+  #worksSec .worksWidth .explanWorks1 .mypartFlex .mypartImg {
+    width: fit-content;
+    margin-inline: auto;
+  }
+
+  #worksSec .worksWidth .explanWorks1 .mypartFlex .maypartImgAndText > p {
+    position: static;
+    margin-inline: auto;
+    margin-top: 1.5rem;
+  }
+  #worksSec .worksWidth .explanWorks1 .townNewsFlex {
+    display: block;
+    text-align: center;
+  }
+  #worksSec .worksWidth .explanWorks1 .townNewsFlex > p {
+    width: fit-content;
+    margin-inline: auto;
+  }
+}
+
+/* --media <=740px-- */
+@media (max-width: 740px) {
+  #worksSec .worksWidth .lengthTitle {
+    writing-mode: horizontal-tb;
+  }
+}
+
+/* --media <=430px-- */
+@media (max-width: 430px) {
+  main #topSec {
+    height: 50vh;
+  }
+  main #topSec h1 {
+    font-size: 4rem;
+    width: fit-content;
+    letter-spacing: normal;
+    margin-inline: auto;
+    padding-inline-start: 2rem;
+  }
+  main #blogSec {
+    margin-inline: 1rem;
+    padding-inline: 0.5rem;
+    font-size: 14px;
+  }
+  #worksSec .worksWidth .conceptText {
+    font-size: 36px;
+  }
+  #worksSec .worksWidth .conceptText::before {
+    font-size: 60px;
+  }
+  #worksSec .worksWidth .conceptText .textarea {
+    margin-left: 0;
+  }
+
+  #worksSec .worksWidth .explanWorks1 {
+    inline-size: 365px;
+    letter-spacing: normal;
+    line-height: 2.3rem;
+    margin-inline: auto;
+    padding-inline: 0.5rem;
   }
 }
 
