@@ -87,9 +87,9 @@ video {
 
 /* top */
 main #topSec {
-  width: 100vw;
+  max-width: 100vw;
   max-height: 700px;
-  background-image: url(../images/kariImg.jpg);
+  background-image: url(../images/topback.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
