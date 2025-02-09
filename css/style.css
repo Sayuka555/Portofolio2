@@ -34,6 +34,18 @@ video {
   --grayColor: #3c3c3c;
   --gray: #7d7d7d;
 }
+/* スクロールに合わせふわりと表示 */
+.scroll-up {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: all 1s;
+}
+.scroll-up.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
 
 /* TOPに戻るボタン */
 .topbtn {
@@ -389,8 +401,15 @@ footer {
 }
 
 /* ーーーーーーーー以下メディアクエリーーーーーーー */
+@media (max-width: 935px) {
+  #worksSec .worksWidth .explanWorks1 .townNewsFlex {
+    justify-content: center;
+  }
+}
+
 /* media <=800px */
 @media (max-width: 800px) {
+  /* ドロワーボタン */
   .drawerButton {
     position: fixed;
     top: 10px;
