@@ -46,6 +46,23 @@ video {
   visibility: visible;
   transform: translateY(0px);
 }
+/* タイピングアニメーション */
+.typing-animation::after {
+  content: '';
+  border-right: 1px solid #333;
+  margin-left: 2px;
+  animation: flashing 1s linear infinite;
+  opacity: 0;
+}
+@keyframes flashing {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
 /* TOPに戻るボタン */
 .topbtn {
