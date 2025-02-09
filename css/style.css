@@ -230,6 +230,17 @@ main #topSec h1 {
   margin-top: 20px;
   max-width: 600px;
   max-height: 350px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+}
+#worksSec .worksWidth .worksImgAndLength .works1Img img {
+  height: auto;
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+#worksSec .worksWidth .worksImgAndLength .works1Img:hover img {
+  transform: scale(1.1);
 }
 
 /* 説明のテキスト */
@@ -265,7 +276,18 @@ main #topSec h1 {
   margin-top: 4rem;
   max-width: 500px;
   height: 300px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
   /* box-shadow: 0px 3px 7px; */
+}
+#worksSec .worksWidth .explanWorks1 .mypartFlex .mypartImg img {
+  height: auto;
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+#worksSec .worksWidth .explanWorks1 .mypartFlex .mypartImg:hover img {
+  transform: scale(1.1);
 }
 
 #worksSec .worksWidth .explanWorks1 .mypartFlex .maypartImgAndText > p {
