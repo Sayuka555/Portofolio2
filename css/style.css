@@ -24,7 +24,7 @@ video {
   --barColor: #eaf4fc;
   --menuColor: linear-gradient(
     109.6deg,
-    rgba(204, 228, 247, 1) 11.2%,
+    #006871b5 11.2%,
     rgba(237, 246, 250, 1) 100.2%
   );
   --fontColor: #f3f3f3;
@@ -448,6 +448,9 @@ footer {
 
 /* media <=800px */
 @media (max-width: 800px) {
+  img {
+    max-width: 800px;
+  }
   /* ドロワーボタン */
   .drawerButton {
     position: fixed;
@@ -588,6 +591,9 @@ footer {
 
 /* --media <=430px-- */
 @media (max-width: 430px) {
+  img {
+    max-width: 430px;
+  }
   main #topSec {
     height: 50vh;
   }
