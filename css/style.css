@@ -22,11 +22,7 @@ video {
 :root {
   --drawerColor: #006871b5;
   --barColor: #eaf4fc;
-  --menuColor: linear-gradient(
-    109.6deg,
-    #00b5c5b5 11.2%,
-    rgba(237, 246, 250, 1) 100.2%
-  );
+  --menuColor: #00c0d1;
   --fontColor: #f3f3f3;
   --blueColor: #006871b5;
   --backgroundblue: #00687188;
